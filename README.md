@@ -73,6 +73,19 @@ CityHub: Certainly! You can reserve a picnic area in Golden Gate Park by visitin
 
 ## FAQs
 
+Q: How is CityHub different from Google?\
+A:  CityHub offers a more personalized, interactive, and efficient experience compared to using a search engine like Google. While Google is a powerful tool for general information searching, CityHub offers a more specialized, user-friendly, and efficient experience tailored specifically for navigating San Francisco's city services and resources.
+- Conversational Interface: \
+  CityHub provides a natural, dialogue-based interface that allows users to ask questions and receive responses in a conversational manner. This makes it easier for users to find the information they need without having to sift through search results and web pages.
+- Personalized Guidance: \
+  CityHub can provide step-by-step instructions, recommendations, and context-specific advice based on the user's individual needs and questions. This level of personalization is difficult to achieve with a generic search engine.
+- Curated Knowledge Base: \
+  CityHub's knowledge base is specifically curated for San Francisco city services and resources, ensuring that users receive accurate, relevant, and up-to-date information. With Google, users may have to navigate through multiple websites to find the information they need.
+- Efficient Information Retrieval: \
+  By leveraging advanced language models and knowledge graphs, CityHub can quickly understand the user's intent and provide concise, targeted responses. This saves users time and effort compared to manually searching through Google results.
+- Interactive Follow-up: \
+  CityHub can engage in multi-turn conversations, allowing users to ask follow-up questions, request clarifications, and explore related topics seamlessly. This interactive nature makes it easier for users to find the information they need without having to start new searches.
+  
 Q: Is CityHub an official service provided by the City of San Francisco?\
 A: No, CityHub is an independent project developed by a team of AI enthusiasts and is not affiliated with the San Francisco government.
 
