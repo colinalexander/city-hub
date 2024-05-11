@@ -30,7 +30,7 @@ pip install -r requirements.txt
 4. Set up the necessary environment variables
 ```
 cp .env-example .env
-# ENTER VALID API KEYS WHERE REQUIRED
+# EDIT NEW .env FILE AND ENTER VALID API KEYS WHERE REQUIRED
 ```
 
 5. Run the application:
@@ -87,3 +87,12 @@ A: We welcome contributions from the community! Please check our contributing gu
 
 Q: Who can I contact for more information about CityHub?\
 A: If you have any questions, suggestions, or feedback, please open an issue on our GitHub repository or contact the project maintainers at cityhub@example.com.
+
+## Tech stack
+
+[TBD - sample links below]
+- https://discord.com/channels/1235993423723495476/1235997016144875571/1238561175202041906
+- https://github.com/meta-llama/llama-recipes
+- https://github.com/groq/groq-python
+- https://github.com/ollama/ollama-python
+- https://huggingface.co/welcome
