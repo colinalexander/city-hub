@@ -2,6 +2,11 @@
 
 CityHub is an AI-powered conversational assistant designed to help residents and visitors easily access information about San Francisco's city services and resources. By leveraging advanced language models like Meta's Llama 3 and knowledge graphs, CityHub provides interactive, personalized guidance to help users navigate the complex landscape of local government.
 
+## Project documents
+
+- [Presentation slides](https://docs.google.com/presentation/d/19K0d0pSgpOjFar9P9ySab2wHj8nlm7HHAY9KsvACke0/edit#slide=id.g27113729c33_0_57)
+- [Project plan](https://docs.google.com/document/d/17ufgJSBhHJsN_bcrvRLMrHKD5v6RGgRLk7vG0Gkhkv0/edit?pli=1)
+
 ## Installation
 
 To run CityHub locally, follow these steps:
@@ -107,3 +112,4 @@ A: If you have any questions, suggestions, or feedback, please open an issue on 
 - https://github.com/groq/groq-python
 - https://github.com/ollama/ollama-python
 - https://brave.com/search/api/
+
