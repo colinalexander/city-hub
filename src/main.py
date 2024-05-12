@@ -60,6 +60,7 @@ async def get_chatbot_result(user_request: ChatbotRequest) -> JSONResponse:
                 logger.info(f"Finished running: {key}")
         final_response = value["generation"]
         logger.info(f"{final_response=}")
+        final_response = final_response.replace("According to the provided context, ", "").capitalize()
         #final_response = "abc"
         return JSONResponse(
             content=final_response, status_code=200
