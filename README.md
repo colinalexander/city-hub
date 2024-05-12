@@ -103,9 +103,7 @@ A: If you have any questions, suggestions, or feedback, please open an issue on 
 
 ## Tech stack
 
-[TBD - sample links below]
-- https://discord.com/channels/1235993423723495476/1235997016144875571/1238561175202041906
-- https://github.com/meta-llama/llama-recipes
+- https://github.com/meta-llama
 - https://github.com/groq/groq-python
 - https://github.com/ollama/ollama-python
-- https://huggingface.co/welcome
+- https://brave.com/search/api/
