@@ -1,5 +1,7 @@
+""" Tools for traditional web scraping using BeautifulSoup."""
+
 from functools import wraps
-from typing import Any, Callable, Dict, Generator, Optional, TypeVar
+from typing import Any, Callable, TypeVar
 from urllib.parse import urljoin, urlparse, urlunparse
 import requests
 import time
@@ -15,7 +17,8 @@ load_dotenv(find_dotenv())
 T = TypeVar("T")
 
 # HTML parser used by BeautifulSoup.
-HTML_PARSER = "html5lib"  
+HTML_PARSER = "html5lib"
+
 
 def retry_with_exponential_backoff(
     max_retries: int = 3,
@@ -69,11 +72,12 @@ def retry_with_exponential_backoff(
 
         return wrapper
 
-    return decorator
+    return decorator  # type: ignore
 
-#BaseIngestor.retry_with_exponential_backoff(
+
+# BaseIngestor.retry_with_exponential_backoff(
 #    max_retries=3, initial_delay=1.0, backoff_factor=2.0
-#)
+# )
 def make_request(url: str, timeout: float = 10.0) -> requests.Response:
     """Make an HTTP request with retry and delay.
 
@@ -107,6 +111,7 @@ def parse_html(html: str) -> Soup:
     """
     return Soup(markup=html, features=HTML_PARSER)
 
+
 def get_base_url(soup: Soup) -> str:
     """Extract the base URL from a BeautifulSoup object.
 
@@ -117,13 +122,13 @@ def get_base_url(soup: Soup) -> str:
         The base URL.
     """
     # Try to find a base tag
-    base_tag = soup.find('base')
-    if base_tag and base_tag.get('href'):
-        base_url = base_tag['href']
+    base_tag = soup.find("base")
+    if base_tag and base_tag.get("href"):  # type: ignore
+        base_url = base_tag["href"]  # type: ignore
     else:
         # Fallback to the scheme and netloc from the original URL
         parsed_url = urlparse(url)
-        base_url = urlunparse((parsed_url.scheme, parsed_url.netloc, '', '', '', ''))
+        base_url = urlunparse((parsed_url.scheme, parsed_url.netloc, "", "", "", ""))
     return base_url if isinstance(base_url, str) else base_url[0]
 
 
@@ -141,10 +146,10 @@ def get_relative_links(url: str) -> list[str]:
     if response.status_code != 200:
         logger.error(f"Failed to download {url}. Status code: {response.status_code}")
         return []
-    
+
     soup = parse_html(response.text)
     base_url = get_base_url(soup)
-    
+
     urls = []
     links = soup.find_all("a", href=True)
     for link in links:
@@ -152,6 +157,7 @@ def get_relative_links(url: str) -> list[str]:
         if href:
             urls.append(urljoin(base_url, href))
     return urls
+
 
 response = make_request(url)
 if response.status_code != 200:
@@ -166,6 +172,6 @@ links = soup.find_all("a", class_="sfgov-topic-card")
 for link in links:
     href = link.get("href")
     if href:
-        urls.append(urljoin(base_url, href))   
-        
+        urls.append(urljoin(base_url, href))
+
 model_id = "meta-llama/Meta-Llama-3-8B"

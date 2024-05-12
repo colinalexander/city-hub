@@ -17,11 +17,12 @@ T = TypeVar("T")
 openai_key = os.getenv("OPENAI_APIKEY")
 
 graph_config = {
-   "llm": {
-      "api_key": openai_key,
-      "model": "gpt-3.5-turbo",
-   },
+    "llm": {
+        "api_key": openai_key,
+        "model": "gpt-3.5-turbo",
+    },
 }
+
 
 def is_url_valid(url: str) -> bool:
     """Check if a URL is valid."""
@@ -38,6 +39,7 @@ def is_url_valid(url: str) -> bool:
         logger.error(f"An error occurred validating {url=}: {e}")
         return False
 
+
 def is_url_redirect(url):
     try:
         response = requests.head(url, allow_redirects=True, verify=False)
@@ -47,7 +49,7 @@ def is_url_redirect(url):
 
     return url != response.url
 
-    
+
 def retry_with_exponential_backoff(
     max_retries: int = 3,
     initial_delay: float = 1.0,
@@ -102,6 +104,7 @@ def retry_with_exponential_backoff(
 
     return decorator
 
+
 # ************************************************
 # Create the SmartScraperGraph instance and run it
 # ************************************************
@@ -112,7 +115,7 @@ topic_url = "https://www.sf.gov/topics"
 url_template = """\
     {url: description}
 """
-            
+
 link_prompt = f"""\
 Give me all the URLs for all the services on this webpage starting with \
 {topic_url} and a description of that link. \
@@ -124,13 +127,11 @@ external_link_prompt = (
     "a chatbot to answer questions about it."
 )
 
+
 @retry_with_exponential_backoff()
 def smart_scrape(url: str, prompt: str):
-        return SmartScraperGraph(
-            prompt=prompt,
-            source=url,
-            config=graph_config
-        ).run()
+    return SmartScraperGraph(prompt=prompt, source=url, config=graph_config).run()
+
 
 visited_urls = set()  # Ones we have already scraped, whether saved or not.
 visited_url_descriptions: dict[str, Any] = {}  # Ones we want to keep.
@@ -144,7 +145,7 @@ while urls_to_visit:
     if url in visited_urls or not is_url_valid(url):
         visited_urls.add(url)
         continue  # Already scraped this URL or it does not return a 200.
-    
+
     description = urls_to_visit.pop(url)
     visited_url_descriptions[url] = description
     # Use the redirect URL if it is different from the original URL.
@@ -161,7 +162,7 @@ while urls_to_visit:
     else:
         internal = False
         prompt = external_link_prompt
-    
+
     result = {}
     try:
         logger.info(f"Scraping {url}")
@@ -169,11 +170,11 @@ while urls_to_visit:
     except Exception as e:
         logger.warning(f"Failed to scrape {url}. {prettify_exec_info(e)}")
         continue
-    
+
     if not isinstance(result, dict):
         logger.warning(f"Failed to scrape {url}. {result}")
         continue
-    
+
     visited_url_count = len(visited_url_descriptions)
     for link, description in result.items():
         if not link.startswith("http"):
@@ -186,9 +187,9 @@ while urls_to_visit:
         if link not in visited_urls and link not in urls_to_visit and internal:
             # Only add links found in topics.
             urls_to_visit[link] = description
-    
+
     logger.info(f"Size of visited URLs: {visited_url_count}")
     logger.info(f"Size of URLs to visit: {len(urls_to_visit)}")
-    
+
 with open("data/visited_urls.json", "w") as f:
     json.dump(visited_url_descriptions, f, indent=2)
