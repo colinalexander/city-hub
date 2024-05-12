@@ -1,0 +1,10 @@
+beautifulsoup4
+python-dotenv
+groq
+html5lib
+langchain_community
+loguru
+scrapegraphai
+transformers
+torch
+gradio
