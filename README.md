@@ -2,6 +2,17 @@
 
 CityHub is an AI-powered conversational assistant designed to help residents and visitors easily access information about San Francisco's city services and resources. By leveraging advanced language models like Meta's Llama 3 and knowledge graphs, CityHub provides interactive, personalized guidance to help users navigate the complex landscape of local government.
 
+## Background
+
+This is the project submitted for the [Meta Llama 3 Hackathon](https://metallama3.devpost.com/) (May 11/12 2024).  The project was shortlisted for the Final 8 amongst 52 projects.
+https://devpost.com/software/cityhub
+
+## Team members
+
+- [JP Zhang](https://github.com/jpzhangvincent)
+- [Rama Narasimhan](https://github.com/Rama4)
+- [Colin Alexander](https://github.com/colinalexander)
+
 ## Project documents
 
 - [Presentation slides](https://docs.google.com/presentation/d/19K0d0pSgpOjFar9P9ySab2wHj8nlm7HHAY9KsvACke0/edit#slide=id.g27113729c33_0_57)
