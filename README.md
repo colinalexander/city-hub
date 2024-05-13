@@ -6,6 +6,7 @@ CityHub is an AI-powered conversational assistant designed to help residents and
 
 - [Presentation slides](https://docs.google.com/presentation/d/19K0d0pSgpOjFar9P9ySab2wHj8nlm7HHAY9KsvACke0/edit#slide=id.g27113729c33_0_57)
 - [Project plan](https://docs.google.com/document/d/17ufgJSBhHJsN_bcrvRLMrHKD5v6RGgRLk7vG0Gkhkv0/edit?pli=1)
+- [Demo video](https://www.youtube.com/watch?v=_roTeEO92es)
 
 ## Installation
 
@@ -13,7 +14,7 @@ To run CityHub locally, follow these steps:
 
 1. Clone the repository
 ```
-git clone https://github.com/yourusername/city-hub.git
+git clone https://github.com/colinalexander/city-hub.git
 ```
 
 2. Create and activate virtual environment
@@ -21,7 +22,6 @@ Create your project folder. Then create your virtual environment and activate it
 
 ```
 cd my/project/root/folder
-git clone git@github.com:colinalexander/city-hub.git
 cd city-link
 python3 -m venv .venv
 source .venv/bin/activate
@@ -39,8 +39,10 @@ cp .env-example .env
 ```
 
 5. Run the application:
+Run the client:
 ```
-TBD
+cd client
+npm start
 ```
 
 6. Open your browser and navigate to [`http://localhost:5000`] to start chatting with CityHub.
@@ -112,4 +114,6 @@ A: If you have any questions, suggestions, or feedback, please open an issue on 
 - https://github.com/groq/groq-python
 - https://github.com/ollama/ollama-python
 - https://brave.com/search/api/
+- https://github.com/facebook/react
+- https://github.com/tiangolo/fastapi
 
