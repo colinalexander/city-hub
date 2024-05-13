@@ -10,8 +10,11 @@ https://devpost.com/software/cityhub
 ## Team members
 
 - [JP Zhang](https://github.com/jpzhangvincent)
-- [Rama Narasimhan](https://github.com/Rama4)
-- [Colin Alexander](https://github.com/colinalexander)
+- [Rama Narasimhan](https://github.com/Rama4) (Front end)
+- [Colin Alexander](https://github.com/colinalexander) (Back end)
+  - Utilized [Groq](https://wow.groq.com/why-groq/) with the `llama3-70b-8192` model to generate responses to user messages in the `groq_it()` function.
+  - Leveraged [ScrapegraphAI](https://github.com/VinciGit00/Scrapegraph-ai) with Groq's `llama3-8b-8192` model for the LLM and Ollama's `nomic-embed-text` model for embeddings to scrape data from the San Francisco government [website](https://www.sf.gov/). 
+  - Used LLM prompts to guide the scraping.
 
 ## Project documents
 
@@ -91,7 +94,7 @@ CityHub: Certainly! You can reserve a picnic area in Golden Gate Park by visitin
 
 ## FAQs
 
-Q: How is CityHub different from Google?\
+Q: _How is CityHub different from Google?_\
 A:  CityHub offers a more personalized, interactive, and efficient experience compared to using a search engine like Google. While Google is a powerful tool for general information searching, CityHub offers a more specialized, user-friendly, and efficient experience tailored specifically for navigating San Francisco's city services and resources.
 - Conversational Interface: \
   CityHub provides a natural, dialogue-based interface that allows users to ask questions and receive responses in a conversational manner. This makes it easier for users to find the information they need without having to sift through search results and web pages.
@@ -104,19 +107,19 @@ A:  CityHub offers a more personalized, interactive, and efficient experience co
 - Interactive Follow-up: \
   CityHub can engage in multi-turn conversations, allowing users to ask follow-up questions, request clarifications, and explore related topics seamlessly. This interactive nature makes it easier for users to find the information they need without having to start new searches.
   
-Q: Is CityHub an official service provided by the City of San Francisco?\
+Q: _Is CityHub an official service provided by the City of San Francisco?_\
 A: No, CityHub is an independent project developed by a team of AI enthusiasts and is not affiliated with the San Francisco government.
 
-Q: How does CityHub protect user privacy?\
+Q: _How does CityHub protect user privacy_?\
 A: CityHub does not store any personally identifiable information from user interactions. All conversations are processed anonymously and are not linked to individual users.
 
-Q: Can CityHub help me with issues related to private businesses or organizations?\
+Q: _Can CityHub help me with issues related to private businesses or organizations_?\
 A: No, CityHub's knowledge base is focused on San Francisco's public services and resources. For inquiries related to private entities, please contact the relevant business or organization directly.
 
-Q: How can I contribute to the development of CityHub?\
+Q: _How can I contribute to the development of CityHub_?\
 A: We welcome contributions from the community! Please check our contributing guidelines for more information on how to get involved.
 
-Q: Who can I contact for more information about CityHub?\
+Q: _Who can I contact for more information about CityHub_?\
 A: If you have any questions, suggestions, or feedback, please open an issue on our GitHub repository or contact the project maintainers at cityhub@example.com.
 
 ## Tech stack
