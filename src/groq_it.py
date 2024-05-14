@@ -23,6 +23,8 @@ the `groq_it()` function with a user message and optionally specify the desired 
 to generate a response.
 
 Example usage:
+
+1. Using the module in a Python script:
 ```python
 content = "Why is the sky blue?"
 reply = groq_it(content)  # Default model is llama3-70b-8192
@@ -31,7 +33,25 @@ print(reply)
 
 This will send the user message "Why is the sky blue?" to the default model and print 
 the generated response.
+
+2. Running the module from the command line:
+```bash
+python src/groq_it.py -q "What is the color of the sky" --model "llama3-70b-8192"
+```
+
+This will send the user question "What is the color of the sky" to the "llama3-70b-8192"
+model and print the generated response.
+
+The script accepts the following command-line arguments:
+
+  -q or --question: The user message to ask the model (required).
+  -m or --model: The name of the model to use for generating the response 
+                 (optional, defaults to "llama3-70b-8192").
+
+Make sure to replace src/groq_it.py with the actual path to the script file.
 """
+
+from argparse import ArgumentParser
 
 from groq import Groq
 from groq.types.chat.chat_completion import ChatCompletion
@@ -69,3 +89,16 @@ def groq_it(content: str, model: str = "llama3-70b-8192") -> str:
     if not response.choices:
         return ""
     return response.choices[0].message.content
+
+
+if __name__ == "__main__":
+    from time import sleep
+    parser = ArgumentParser()
+    parser.add_argument("-q", "--question", type=str, required=True)
+    parser.add_argument("-m", "--model", type=str, default="llama3-70b-8192")
+    question = parser.parse_args().question
+    model = parser.parse_args().model
+    sep = "*" * 50 + "\n"
+    print(f"{sep}Question: {question}\nModel: {model}\n{sep}")
+    reply = groq_it(content=question, model=model)
+    print(reply)
