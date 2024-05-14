@@ -36,7 +36,6 @@ Create your project folder. Then create your virtual environment and activate it
 
 ```
 cd my/project/root/folder
-cd city-link
 python3 -m venv .venv
 source .venv/bin/activate
 ```
@@ -59,7 +58,7 @@ cd client
 npm start
 ```
 
-6. Open your browser and navigate to [`http://localhost:5000`] to start chatting with CityHub.
+6. Open your browser and navigate to `http://localhost:3000` to start chatting with CityHub.
 
 ## Usage
 
