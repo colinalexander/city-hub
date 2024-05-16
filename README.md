@@ -10,6 +10,8 @@ https://devpost.com/software/cityhub
 ## Team members
 
 - [JP Zhang](https://github.com/jpzhangvincent)
+  - Prototyped the Adaptive RAG module and Agent framework in `langchain` and `langgraph`
+  - Implemented the backend LLM API in `fastAPI` and integrated with the frontend UI
 - [Rama Narasimhan](https://github.com/Rama4) (Front end)
 - [Colin Alexander](https://github.com/colinalexander) (Back end)
   - Utilized [Groq](https://wow.groq.com/why-groq/) with the `llama3-70b-8192` model to generate responses to user messages in the `groq_it()` function.

@@ -22,6 +22,7 @@ embedding_function = HuggingFaceEmbeddings(
     encode_kwargs=encode_kwargs
 )
 
+# add more custom urls if needed
 urls = urls + [
     "https://www.sfmta.com/getting-around/drive-park/how-avoid-parking-tickets",
     "https://www.sfmta.com/getting-around/safety/motorcycle-safety",
@@ -34,7 +35,6 @@ urls = urls + [
 
 docs = WebBaseLoader(urls).load()
 logger.info("Finished loading urls")
-#docs_list = [item for sublist in docs for item in sublist]
 
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
     chunk_size=500, chunk_overlap=100
