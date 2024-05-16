@@ -58,7 +58,7 @@ def get_question_router():
 
     # Prompt 
     system = """You are an expert at routing a user question to a vectorstore or web search.
-    The vectorstore contains documents related to the public city services in San Francisco, such as the slow stree problem.
+    The vectorstore contains documents related to the city services and local information in San Francisco, such as parking, the slow stree program, vote registration, etc.
     Use the vectorstore for questions on these topics. For all else, for example current news, events and travel guides, use web-search."""
     route_prompt = ChatPromptTemplate.from_messages(
         [
@@ -107,7 +107,7 @@ def get_rag_chain():
     <|begin_of_text|><|start_header_id|>system<|end_header_id|>
     You are an AI assistant to help residents and visitors to navigate city services and query information easier.\n
     Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. 
-    Only use the relevant documents related to the user query and keep the answer concise. \n
+    Only use the relevant documents related to the user query, include links and contact info if available and keep the answer concise. \n
 
     <|eot_id|><|start_header_id|>user<|end_header_id|>
     Question: {question} 

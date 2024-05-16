@@ -6,10 +6,10 @@ import json
 from loguru import logger
 
 # Open the JSON file
-# with open('../data/visited_urls.json', 'r') as file:
-#     # Load the JSON data
-#     data = json.load(file)
-#urls = list(data.keys())
+with open('../data/visited_urls.json', 'r') as file:
+    # Load the JSON data
+    data = json.load(file)
+urls = list(data.keys())
 
 # Define embedding model
 model_name = "Alibaba-NLP/gte-base-en-v1.5" #"all-MiniLM-L6-v2" #"intfloat/multilingual-e5-small"
@@ -22,7 +22,10 @@ embedding_function = HuggingFaceEmbeddings(
     encode_kwargs=encode_kwargs
 )
 
-urls = [
+urls = urls + [
+    "https://www.sfmta.com/getting-around/drive-park/how-avoid-parking-tickets",
+    "https://www.sfmta.com/getting-around/safety/motorcycle-safety",
+    "https://www.sf.gov/register-vote",
     "https://www.sfmta.com/permits/residential-parking-permits-rpp",
     "https://www.sfmta.com/projects/slow-streets-program",
     "https://www.sf.gov/give-feedback-slow-streets-program",

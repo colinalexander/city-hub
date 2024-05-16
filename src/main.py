@@ -60,7 +60,8 @@ async def get_chatbot_result(user_request: ChatbotRequest) -> JSONResponse:
                 logger.info(f"Finished running: {key}")
         final_response = value["generation"]
         logger.info(f"{final_response=}")
-        final_response = final_response.replace("According to the provided context, ", "").capitalize()
+        final_response = final_response.replace("According to the provided context, ", "")
+        #final_response[0] = final_response[0].upper()
         #final_response = "abc"
         return JSONResponse(
             content=final_response, status_code=200
@@ -70,7 +71,7 @@ async def get_chatbot_result(user_request: ChatbotRequest) -> JSONResponse:
         response["body"].update({"message": f"{str(error)}"})
         logger.error(f"{response=}")
         return JSONResponse(
-            content="Sorry, I don't know. Please try rephrasing the question.", status_code=response["status_code"]
+            content="Sorry, I don't know. Please try rephrasing the question.", status_code=200#response["status_code"]
         )
 
 
