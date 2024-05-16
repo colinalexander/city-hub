@@ -121,7 +121,7 @@ Q: _How can I contribute to the development of CityHub_?\
 A: We welcome contributions from the community! Please check our contributing guidelines for more information on how to get involved.
 
 Q: _Who can I contact for more information about CityHub_?\
-A: If you have any questions, suggestions, or feedback, please open an issue on our GitHub repository or contact the project maintainers at cityhub@example.com.
+A: If you have any questions, suggestions, or feedback, please open an issue on our GitHub repository.
 
 ## Tech stack
 
