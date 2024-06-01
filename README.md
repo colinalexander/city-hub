@@ -13,6 +13,7 @@ https://devpost.com/software/cityhub
   - Prototyped the Adaptive RAG module and Agent framework in `langchain` and `langgraph`
   - Implemented the backend LLM API in `fastAPI` and integrated with the frontend UI
 - [Rama Narasimhan](https://github.com/Rama4) (Front end)
+  - Developed the ChatBot UI and integrated it with the backend API using React.
 - [Colin Alexander](https://github.com/colinalexander) (Back end)
   - Utilized [Groq](https://wow.groq.com/why-groq/) with the `llama3-70b-8192` model to generate responses to user messages in the `groq_it()` function.
   - Leveraged [ScrapegraphAI](https://github.com/VinciGit00/Scrapegraph-ai) with Groq's `llama3-8b-8192` model for the LLM and Ollama's `nomic-embed-text` model for embeddings to scrape data from the San Francisco government [website](https://www.sf.gov/). 
